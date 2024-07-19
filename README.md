@@ -2,25 +2,22 @@
 
 ## Overview
 
-This project involves creating an IoT temperature monitoring system that reads temperature data from a sensor, publishes it to an MQTT broker, and provides a mechanism to check and alert if the temperature exceeds a certain threshold. It also exposes this data via a simple HTTP API for easy access.
+This extend includes making an IoT temperature checking framework that peruses temperature information from a sensor, distributes it to an MQTT broker, and gives a component to check and caution in the event that the temperature surpasses a certain limit. It moreover uncovered this information through a basic HTTP API for simple get to.
 
 ## Components
 
-1. **Publisher Program**: Reads temperature data from a sensor and publishes it to an MQTT broker every 60 seconds.
-2. **Sub Program**: Sub to the MQTT topic, checks if the temperature exceeds a threshold continuously for 5 minutes, raises an alarm if the condition is met, and saves the data locally.
-3. **Server Program**: Provides an HTTP API to retrieve the most recent temperature data from local storage.
+1. MQTT Program:
+peruses temperature information from a sensor and distributes it to an MQTT broker each 60 seconds.
+2. **Sub Program**:
+Sub to the MQTT theme, it checks on the off chance that the temperature surpasses a edge persistently for 5 minutes, raises an caution in the event that the condition is met, and spares the information locally.
+3. API Program:
+Gives an HTTP API to recover the foremost later temperature information from neighborhood capacity.
 
 ## Requirements
 
-- Python 3.x
-- `paho-mqtt` library
-- `Adafruit_DHT` library (for DHT11 sensor)
-- `Flask` library (for the HTTP server)
+Python 3.x
+'paho-mqtt' library
+- 'Adafruit_DHT' library (for DHT11 sensor)
+- 'Flask' library (for the HTTP server)
 
-## Installation
-
-1. **Clone the Repository:**
-
-   ```bash
-   git clone https://github.com/yourusername/iot-temperature-monitoring.git
-   cd iot-temperature-monitoring
+ 
