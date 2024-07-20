@@ -2,7 +2,7 @@
 
 ## Overview
 
-This extend includes making an IoT temperature checking framework that peruses temperature information from a sensor, distributes it to an MQTT broker, and gives a component to check and caution in the event that the temperature surpasses a certain limit. It moreover uncovered this information through a basic HTTP API for simple get to.
+This extend includes making an IoT temperature checking framework that peruses temperature information from a sensor, distributes it to an MQTT broker, and gives a component to check and caution in the event that the temperature surpasses a certain limit. It more over uncovered this information through a basic HTTP API for simple get to.
 
 ## Components
 
