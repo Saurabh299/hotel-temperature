@@ -1,16 +1,16 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify #for making API
 import os
 
 app = Flask(__name__)
-
+#Get API for temperature 
 @app.route('/temperature', methods=['GET'])
 def get_temperature():
     try:
         # Ensure the data file exists before opening
         file_path = 'temperatureData.txt'
         if not os.path.exists(file_path):
-            return jsonify({"error": "File not found"}), 404
-
+            return jsonify({"error": "File not found"}), 404 #error code
+# Open and do write opration
         with open(file_path, 'r') as file:
             lines = file.readlines()
 
@@ -24,7 +24,7 @@ def get_temperature():
                     temperature = float(latest_entry[1])
                 except ValueError:
                     return jsonify({"error": "Invalid temperature value"}), 400
-
+# Output is temperature with timestamp
                 return jsonify({"timestamp": timestamp, "temperature": temperature})
 
             else:
@@ -32,7 +32,7 @@ def get_temperature():
 
     except Exception as e:
         # Catch any other exceptions
-        return jsonify({"error": str(e)}), 500
+        return jsonify({"error": str(e)}), 500 #error code
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8000)  # Run on all available IP addresses on port 8000
+    app.run(host='0.0.0.0', port=8000)  # Run on all available IP addresses on only this port 8000
