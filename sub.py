@@ -1,22 +1,22 @@
-import paho.mqtt.client as mqtt
+import paho.mqtt.client as mqtt # libery for MQTT setup
 import time
 from datetime import datetime
 
 # MQTT settings
-BROKER = 'broker.hivemq.com'  # Change to your broker address
+BROKER = 'broker.hivemq.com'  # broker address
 PORT = 1883
 TOPIC = 'hotel/temperature'
-THRESHOLD = 25.0  # Threshold value in degrees Celsius
+THRESHOLD = 25.0  # Threshold value in Celsius
 DURATION = 5 * 60  # Duration to check for in seconds (5 minutes)
 
 temperatureData = []
 
-# Callback for when the client receives a CONNACK response from the server.
+# Callback for when the client receives a connection response from the server.
 def onConnect(client, userdata, flags, rc):
     print(f"Connected with result code {rc}")
     client.subscribe(TOPIC)
 
-# Callback for when a PUBLISH message is received from the server.
+# Callback for when a send message is received from the server.
 def onMessage(client, userdata, msg):
     global temperatureData
     try:
@@ -57,6 +57,7 @@ try:
         time.sleep(1)
 except KeyboardInterrupt:
     print("Subscriber stop.")
+    #End the client loop and disconnected with the server
 finally:
     client.loop_stop()
     client.disconnect()
